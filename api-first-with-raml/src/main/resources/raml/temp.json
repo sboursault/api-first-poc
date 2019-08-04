@@ -1,0 +1,14 @@
+{
+  "id": "fe6c8d75-1a5d-4d6f-b973-000000000002",
+  "title": "Harry Potter and the Deathly Hallows",
+  "links": [
+    {
+      "rel": "start",
+      "href": "http://localhost:8080/v1/books"
+    },
+    {
+      "rel": "self",
+      "href": "http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000002"
+    }
+  ]
+}

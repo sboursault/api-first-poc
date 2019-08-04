@@ -1,0 +1,174 @@
+openapi: 3.0.2
+info:
+  title: Books API
+  version: '1.0'
+  description: >
+    Find recommended novels and add yours.<br/>
+    More info <a href="http://google.com">here</a>.
+servers:
+  - url: 'http://localhost:8080/v1'
+paths:
+  /books:
+    get:
+      description: list of recommended books
+      tags:
+        - "books"
+      #operationId: GET_books
+      parameters:
+        - name: page
+          in: query
+          description: the page number to use for pagination
+          schema:
+            type: integer
+      responses:
+        200:
+          description: 'Ok'
+          content:
+            application/json:
+              schema:
+                example:
+                  links:
+                    - rel: start
+                      href: 'http://localhost:8080/v1/books'
+                  content:
+                    - title: Foundation
+                      author: Isaac Asimov
+                      series: Foundation Series
+                      publicationDate: 1951
+                      genre:
+                        - Science fiction
+                        - political drama
+                      links:
+                        - rel: self
+                          href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000000'
+                    - title: Harry Potter and the Deathly Hallows
+                      author: J. K. Rowling
+                      series: Harry Potter
+                      publicationDate: 2009
+                      genre:
+                        - Fantasy
+                      links:
+                        - rel: self
+                          href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000002'
+
+
+
+    post:
+      description: register a new book
+      tags:
+        - "books"
+      responses:
+        201:
+          description: 'Created'
+          #content:
+          #  application/json:
+          #    schema:
+          #      title: empty
+          #      type: nil
+        422:
+          description: 'Unprocessable Entity'
+          content:
+            application/json:
+              example:
+                message: book.publicationDate must be a number between 0 and 2019
+              schema:
+                $ref: '#/components/schemas/books.Error'
+      #operationId: POST_books
+      requestBody:
+        content:
+          application/json:
+            example:
+              title: Theft of Swords
+              author: Michael J. Sullivan
+              series: The Riyria Revelations
+              publicationDate: 2011
+              genre:
+                - Epic fantasy
+            schema:
+              $ref: '#/components/schemas/books.Book'
+        required: true
+  '/books/{bookId}':
+    get:
+      description: get book detail
+      #operationId: GET_books-bookId
+      tags:
+        - "books"
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            example: fe6c8d75-1a5d-4d6f-b973-000000000001
+            #type: string
+
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              example:
+                title: A Game of Thrones
+                author: George R. R. Martin
+                series: A Song of Ice and Fire
+                publicationDate: 1996
+                genre:
+                  - Epic fantasy
+                links:
+                  - rel: start
+                    href: 'http://localhost:8080/v1/books'
+                  - rel: self
+                    href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000001'
+              schema:
+                $ref: '#/components/schemas/books.Book'
+        404:
+          description: ''
+          content:
+            application/json:
+              example:
+                message: no book found with id 'fe6c8d75-1a5d-4d6f-b973-000000000009'
+              schema:
+                $ref: '#/components/schemas/books.Error'
+
+
+components:
+  schemas:
+    books.Error:
+      properties:
+        message:
+          type: string
+      required:
+        - message
+      type: object
+    books.Book:
+      properties:
+        title:
+          minLength: 1
+          maxLength: 200
+          description: Book's title
+          type: string
+        author:
+          type: string
+        series:
+          type: string
+        publicationDate:
+          minimum: 0
+          type: integer
+        genre:
+          uniqueItems: true
+          minItems: 1
+          type: array
+          items:
+            type: string
+      required:
+        - title
+        - author
+        - genre
+      type: object
+  responses: {}
+  parameters: {}
+  examples:  {}
+  requestBodies: {}
+  headers: {}
+  securitySchemes: {}
+  links: {}
+  callbacks: {}

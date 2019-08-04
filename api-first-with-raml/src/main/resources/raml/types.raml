@@ -1,0 +1,24 @@
+#%RAML 1.0 Library
+
+types:
+
+  Error:
+    properties:
+      message: string
+
+  Book:
+    properties:
+      title:
+        type: string
+        description: Book's title
+        minLength: 1
+        maxLength: 200
+      author: string
+      series?: string
+      publicationDate?:
+        type: integer
+        minimum: 0
+      genre:
+        type: string[]
+        uniqueItems: true
+        minItems: 1

@@ -1,0 +1,61 @@
+#%RAML 1.0
+title: Books API
+baseUri: http://localhost:8080/v1
+mediaType: application/json
+
+uses:
+  books: types.raml
+
+/books:
+
+  get:
+    description: list of recommended books
+    queryParameters:
+      page?:
+        displayName: page
+        type: integer
+        description: the page number to use for pagination
+        example: 0
+    responses:
+      200:
+        body:
+          example: !include sample/books.json
+
+  post:
+    description: register a new book
+    body:
+      type: books.Book
+      example: !include sample/new-book.json
+
+    responses:
+      201:
+        body:
+          type: nil  # affichage pas top...
+          displayName: empty
+
+      422:
+        body:
+          type: books.Error
+          example: |
+            {"message":"book.publicationDate must be a number between 0 and 2019"}
+
+
+  /{bookId}:
+
+    uriParameters:
+      bookId:
+        type: string
+        default: fe6c8d75-1a5d-4d6f-b973-000000000001
+
+    get:
+      description: get book detail
+      responses:
+        200:
+          body:
+            type: books.Book
+            example: !include sample/book.json
+        404:
+          body:
+            type: books.Error
+            example: |
+              {"message":"no book found with id 'fe6c8d75-1a5d-4d6f-b973-000000000009'"}

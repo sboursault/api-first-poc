@@ -1,0 +1,36 @@
+{
+  "links": [
+    {
+      "rel": "start",
+      "href": "http://localhost:8080/v1/books"
+    }
+  ],
+  "content": [
+    {
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "series": "Foundation Series",
+      "publicationDate": 1951,
+      "genre": ["Science fiction", "political drama"],
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000000"
+        }
+      ]
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows",
+      "author": "J. K. Rowling",
+      "series": "Harry Potter",
+      "publicationDate": 2009,
+      "genre": ["Fantasy"],
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000002"
+        }
+      ]
+    }
+  ]
+}

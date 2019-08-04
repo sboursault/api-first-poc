@@ -1,0 +1,17 @@
+{
+  "title": "A Game of Thrones",
+  "author": "George R. R. Martin",
+  "series": "A Song of Ice and Fire",
+  "publicationDate": 1996,
+  "genre": ["Epic fantasy"],
+  "links": [
+    {
+      "rel": "start",
+      "href": "http://localhost:8080/v1/books"
+    },
+    {
+      "rel": "self",
+      "href": "http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000001"
+    }
+  ]
+}
