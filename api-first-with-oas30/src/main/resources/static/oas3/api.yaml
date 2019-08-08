@@ -5,8 +5,34 @@ info:
   description: >
     Find recommended novels and add yours.<br/>
     More info <a href="http://google.com">here</a>.
+
+    Also, we can use **markdow** syntax, `fixed elements` or even some formated code:
+
+    <pre>
+        curl -X GET \
+          http://myserver/hello
+    </pre>
+
+
+
+    ACME offers a lot of configuration options...
+    <div class="alert alert-success" role="alert"><i class="fa fa-info-circle"></i> <b>Tip: </b>See the resources available in the portal for more detail.</div>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b>The  network includes a firewall that protects your access to the resources...</div>
+
+    <div class="container">
+    <div class="apiConfigDetails">
+    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#demo">
+    <span class="glyphicon glyphicon-collapse-down"></span> See API Configuration Details
+    </button>
+    <div id="demo" class="collapse">
+
+    <h2>Identifiers Allowed</h2>
+
+    <p>Based on this configuration, ACME will accept any of the following identifiers in requests.</p>
+
+
 servers:
-  - url: 'http://localhost:8080/v1'
+  - url: 'http://localhost:8081/v1'
 paths:
   /books:
     get:
@@ -97,6 +123,7 @@ paths:
         - name: bookId
           in: path
           required: true
+          description: "Book's id (eg. fe6c8d75-1a5d-4d6f-b973-000000000001)"
           schema:
             example: fe6c8d75-1a5d-4d6f-b973-000000000001
             #type: string

@@ -1,6 +1,5 @@
 intersting
 
-https://swagger.io/blog/news/mulesoft-joins-the-openapi-initiative/
 
 
 compliqué d'obtenir les pojo à l'annotation près
@@ -43,6 +42,9 @@ api first marche bien quand on fait des choses simples
 
 # conversion raml 2 open-api-3 (OAS30)
 
+https://swagger.io/blog/news/mulesoft-joins-the-openapi-initiative/
+https://blogs.mulesoft.com/dev/api-dev/open-api-raml-better-together/
+
 https://www.npmjs.com/package/api-spec-converter
 https://github.com/aml-org/amf
 https://github.com/mulesoft/amf-examples # vers OAS2 uniquement !!?
@@ -58,27 +60,5 @@ supprimer --harmony
 
 oas-raml-converter --from RAML --to OAS30 ../raml-demo/src/main/resources/raml/api.raml >  ../raml-demo/src/main/resources/static/oas3/api.json
 
-
-
-
-swagger doc:
-
-https://idratherbewriting.com/learnapidoc/pubapis_swagger.html
-https://developers.themoviedb.org/3/account/get-account-details   (have a look at the getting started)
-
-
-https://idratherbewriting.com/learnapidoc/pubapis_swagger_intro.html (some links about api documentation)
-
-
-## open api
-
-https://idratherbewriting.com/learnapidoc/pubapis_openapi_tutorial_overview
-
-
-possibilié de faire des includes pour simplifier/éviter duplication ?
-online editor, pas idéal si plusieur fichiers... plugin intellij ?
-swagger editor online ne fonctionne qu'avec un seul fichier ...
-
-comportement du plugin swagger intellij en cas d'erreur ???!!!
 
 

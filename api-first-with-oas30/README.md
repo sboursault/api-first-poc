@@ -1,62 +1,3 @@
-intersting
-
-https://swagger.io/blog/news/mulesoft-joins-the-openapi-initiative/
-
-
-compliqué d'obtenir les pojo à l'annotation près
-
-
-
-sudo npm install -g api-console-cli
-
- ->  works with remote files too
-NODE_OPTIONS=--max_old_space_size=2048
-api-console build -t "RAML 1.0" -a helloworld.raml
-api-console serve build/ --open
-
-
-
-NODE_OPTIONS=--max_old_space_size=2048 api-console build -t "RAML 1.0" -a src/main/resources/raml/api.raml -o src/main/resources/static/api-console --verbose
-
-
-# raml
-https://raml.org/developers/raml-100-tutorial
-
-
-# hateoas
-link names
-https://stackoverflow.com/a/13686175
-
-
-# bilan
-
-- possible de concevoir sur un exemple, qui sera inclue dans la doc
-- pas obligatoire de documenter toutes les structures (usage interne +)
-- pas mal la visu des erreurs avec un exemple
-
-
-? génération de code auto ?
-test de contrat ?
-oauth ?
-
-api first marche bien quand on fait des choses simples
-
-# conversion raml 2 open-api-3 (OAS30)
-
-https://www.npmjs.com/package/api-spec-converter
-https://github.com/aml-org/amf
-https://github.com/mulesoft/amf-examples # vers OAS2 uniquement !!?
-
-
-api-spec-converter --from=raml --to=openapi_3 --syntax=yaml ../raml-demo/src/main/resources/raml/api.raml > swagger.json
-//  --order=alpha 
-
-https://www.npmjs.com/package/oas-raml-converter
-
-vi /usr/lib/node_modules/oas-raml-converter/lib/bin/converter.js
-supprimer --harmony
-
-oas-raml-converter --from RAML --to OAS30 ../raml-demo/src/main/resources/raml/api.raml >  ../raml-demo/src/main/resources/static/oas3/api.json
 
 
 
@@ -82,3 +23,45 @@ swagger editor online ne fonctionne qu'avec un seul fichier ...
 comportement du plugin swagger intellij en cas d'erreur ???!!!
 
 
+
+
+swagger ui alternatives
+
+https://tech.trustpilot.com/an-evaluation-of-auto-generated-rest-api-documentation-uis-53031753a789
+
+https://github.com/Redocly/redoc 
+-> ne permet pas de tester l'api
+
+https://mrin9.github.io/RapiDoc/
+https://github.com/mrin9/RapiDoc
+-> les exemples ne sont pas proposés à la saisie
+
+https://github.com/mrin9/OpenAPI-Viewer
+https://mrin9.github.io/OpenAPI-Viewer/#/load/https%3A%2F%2Fapi.apis.guru%2Fv2%2Fspecs%2Fbitbucket.org%2F2.0%2Fswagger.json
+
+https://swaggerui.herokuapp.com/
+https://github.com/jensoleg/swagger-ui
+-> not maintained, must not comply with OAS30
+
+https://github.com/twskj/pretty-swag
+-> no support for OAS30
+
+https://github.com/xiaoymin/swagger-bootstrap-ui
+https://doc.xiaominfo.com/en/i18n.html
+-> prometteur mais logique pas comprise
+
+https://github.com/Orange-OpenSource/angular-swagger-ui
+-> pas mieux que swagger ui officiel
+
+https://github.com/koumoul-dev/openapi-viewer
+-> supporte uniquement spec json
+
+https://www.quora.com/What-are-some-alternatives-to-Swagger-for-documenting-REST-APIs
+
+
+other oas30 tools:
+https://apis.guru/awesome-openapi3/category.html
+
+
+RECUPERER un swagger ui plus récent.
+Bye bye spring fox
