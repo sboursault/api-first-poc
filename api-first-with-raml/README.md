@@ -1,6 +1,3 @@
-intersting
-
-
 
 compliqué d'obtenir les pojo à l'annotation près
 
@@ -20,6 +17,16 @@ NODE_OPTIONS=--max_old_space_size=2048 api-console build -t "RAML 1.0" -a src/ma
 
 # raml
 https://raml.org/developers/raml-100-tutorial
+
+
+## raml tools
+
+https://raml.org/projects
+
+## validation
+
+npm i -g raml-cop
+raml-cop  src/main/resources/raml/api.raml 
 
 
 # hateoas

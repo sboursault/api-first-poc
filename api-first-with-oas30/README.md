@@ -1,17 +1,17 @@
 
 
 
-
-swagger doc:
+## about api and|or tehcnical doc
 
 https://idratherbewriting.com/learnapidoc/pubapis_swagger.html
-https://developers.themoviedb.org/3/account/get-account-details   (have a look at the getting started)
 
+An good example based on **https://stoplight.io**, integrating swagger ui within the doc (have a look at the getting started)
+https://developers.themoviedb.org/3/account/get-account-details
 
 https://idratherbewriting.com/learnapidoc/pubapis_swagger_intro.html (some links about api documentation)
 
 
-## open api
+## open api 3 spec
 
 https://idratherbewriting.com/learnapidoc/pubapis_openapi_tutorial_overview
 
@@ -22,10 +22,34 @@ swagger editor online ne fonctionne qu'avec un seul fichier ...
 
 comportement du plugin swagger intellij en cas d'erreur ???!!!
 
+## swagger editor
 
+git clone https://github.com/swagger-api/swagger-editor.git
+cd swagger-editor
+npm install
+npm run build
+npm start
 
+##swagger editor alternatives
 
-swagger ui alternatives
+++ https://www.apicur.io/
+++ https://mermade.github.io/openapi-gui/#
++some visualstudio plugins: https://apis.guru/awesome-openapi3/category.html
+
+eclipse plugin: https://github.com/RepreZen/KaiZen-OpenAPI-Editor (validation, content assist)
+eclipse plugin: https://www.reprezen.com/swagger-tools (payant, live swagger-ui)
+
+https://github.com/apinf/openapi-designer
+
+# swagger-ui
+
+dernière release de springfox-swagger-ui de juin 2018 :(
+-> pas mal d'évolutions manquent
+
+intégration swagger-ui avec le reste de la doc:
+https://idratherbewriting.com/learnapidoc/pubapis_combine_swagger_and_guide.html
+
+## swagger ui alternatives
 
 https://tech.trustpilot.com/an-evaluation-of-auto-generated-rest-api-documentation-uis-53031753a789
 
@@ -59,9 +83,6 @@ https://github.com/koumoul-dev/openapi-viewer
 https://www.quora.com/What-are-some-alternatives-to-Swagger-for-documenting-REST-APIs
 
 
-other oas30 tools:
+## other oas30 tools:
 https://apis.guru/awesome-openapi3/category.html
 
-
-RECUPERER un swagger ui plus récent.
-Bye bye spring fox
