@@ -53,6 +53,8 @@ uses:
         200:
           body:
             type: books.Book
+            properties:
+              links: books.Link[]
             example: !include sample/book.json
         404:
           body:
