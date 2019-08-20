@@ -48,7 +48,23 @@ uses:
         default: fe6c8d75-1a5d-4d6f-b973-000000000001
 
     get:
-      description: get book detail
+      description: |
+        get book detail.
+
+        If the book exists, returns with a **200** HTTP status code.
+
+        Otherwise, a 404 is returned.
+
+        api-console supports description with `html` and `markdown`.
+
+
+        | Tables   |      Are      |  Cool |
+        |----------|:-------------:|------:|
+        | col 1 is |  left-aligned | $1600 |
+        | col 2 is |    centered   |   $12 |
+        | col 3 is | right-aligned |    $1 |
+
+
       responses:
         200:
           body:

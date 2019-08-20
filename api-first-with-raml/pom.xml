@@ -74,11 +74,9 @@
                         <configuration>
                             <defaultPackage>foo.foo</defaultPackage>
                             <ramlFile>${project.build.resources[0].directory}/raml/api.raml</ramlFile>
-                            &lt;!&ndash;
                                 <basePlugins>
                                         <value>core.equalsAndHashCode</value>
                                 </basePlugins>
-                            &ndash;&gt;
                         </configuration>
                     </execution>
                 </executions>
@@ -112,40 +110,14 @@
                         <configuration>
                             <basePackage>org.mule.example</basePackage>
                             <useJava8Dates>false</useJava8Dates>
-                            &lt;!&ndash;True by default                            &ndash;&gt;
                             <includeAdditionalProperties>true</includeAdditionalProperties>
-                            &lt;!&ndash;False by default                            &ndash;&gt;
                             <useOptionalForGetters>false</useOptionalForGetters>
-                            &lt;!&ndash;False by default                            &ndash;&gt;
                             <useBigDecimals>false</useBigDecimals>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>-->
 
-            <!--<plugin>
-                &lt;!&ndash; Download Swagger UI webjar. &ndash;&gt;
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.1</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.webjars</groupId>
-                                    <artifactId>swagger-ui</artifactId>
-                                    <version>3.17.0</version>
-                                </artifactItem>
-                            </artifactItems>
-                            <outputDirectory>${project.build.directory}/classes/static/swagger-ui</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
         </plugins>
     </build>
 

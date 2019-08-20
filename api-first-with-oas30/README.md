@@ -86,3 +86,5 @@ https://www.quora.com/What-are-some-alternatives-to-Swagger-for-documenting-REST
 ## other oas30 tools:
 https://apis.guru/awesome-openapi3/category.html
 
+
+TODO : voir si possible d'incule exemple et description avec spring fox
