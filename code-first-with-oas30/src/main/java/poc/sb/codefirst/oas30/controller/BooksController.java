@@ -6,7 +6,6 @@ import org.springframework.hateoas.Resources;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import poc.sb.codefirst.oas30.config._404;
 import poc.sb.codefirst.oas30.model.Book;
 import poc.sb.codefirst.oas30.resource.BookResource;
 import poc.sb.codefirst.oas30.service.BookService;

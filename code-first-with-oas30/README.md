@@ -12,3 +12,17 @@ https://github.com/springfox/springfox/issues/2767 - Example property on operati
 
 ecrire un plugin ?
 https://springfox.github.io/springfox/docs/current/#example-parameterbuilderplugin
+
+## apidocjs
+
+apidoc -i src/main/java/ -o apidoc/ -t mytemplate/
+
+peut on obtenir la spec OAS 30 ?
+possibilité de mixer avec d'autres docs ?
+oauth ?
+etc.
+detailed structure: meaning of each property, etc.
+
+C'est long !!! pas fun du tout !
+Pas possible de récupérer la spec oas3
+
