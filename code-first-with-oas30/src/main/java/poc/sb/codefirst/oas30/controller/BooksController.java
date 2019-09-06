@@ -18,7 +18,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 import static org.springframework.http.HttpStatus.CREATED;
 
-@Api(tags = "Book api", description = " ")
+@Api(tags = "Book api")
 @RestController
 @RequestMapping(
         path = "/v1/books",
@@ -30,10 +30,8 @@ public class BooksController {
 
     @ApiOperation(
             value = "list of recommended books",
-            code = 200,
             notes = "some notes",
             responseContainer = "response container", responseReference = "response ref"/*, extensions = */)
-
     @GetMapping
     public Resources<BookResource> getAll() {
         List<BookResource> books = bookService.getBooks().stream()

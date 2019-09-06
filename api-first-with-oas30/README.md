@@ -86,5 +86,7 @@ https://www.quora.com/What-are-some-alternatives-to-Swagger-for-documenting-REST
 ## other oas30 tools:
 https://apis.guru/awesome-openapi3/category.html
 
+## bilan
 
-TODO : voir si possible d'incule exemple et description avec spring fox
+maintenance de la spec plutôt fun pour des petits services.
+Pour des services plus conséquent, c'est beaucoup moins sympa -> privilégier code first ?
