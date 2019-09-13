@@ -3,7 +3,7 @@ package poc.sb.codefirst.oas30.controller;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
 import poc.sb.codefirst.oas30.model.Book;
-import poc.sb.codefirst.oas30.resource.BookResource;
+import poc.sb.codefirst.oas30.resource.BookQuery;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -56,7 +56,7 @@ public interface IBooksController {
      *
      */
 
-    Resources<BookResource> getAll();
+    Resources<BookQuery> getAll();
 
     /**
      * @api {get} /api/book/:isbn Get a book via its ISBN code
@@ -79,7 +79,7 @@ public interface IBooksController {
     }
      *
      */
-    BookResource get(String id);
+    BookQuery get(String id);
 
     ResponseEntity create(Book input, HttpServletResponse response);
 }

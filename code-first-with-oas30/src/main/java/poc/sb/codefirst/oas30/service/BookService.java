@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import poc.sb.codefirst.oas30.exception.EntityNotFoundException;
 import poc.sb.codefirst.oas30.exception.InvalidCommandException;
 import poc.sb.codefirst.oas30.model.Book;
+import poc.sb.codefirst.oas30.resource.CreateBookCommand;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -19,7 +20,8 @@ public class BookService {
         return bookRepository.getAll();
     }
 
-    public Book create(Book book) {
+    public Book create(CreateBookCommand command) {
+        Book book = command.getBook();
         if (book.getId() != null) {
             throw new InvalidCommandException("book.id must be null");
         }

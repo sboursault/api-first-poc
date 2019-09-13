@@ -6,17 +6,16 @@ import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import poc.sb.codefirst.oas30.controller.BooksController;
 import poc.sb.codefirst.oas30.model.Book;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
-public class BookResultResource extends ResourceSupport {
+public class BookResultQuery extends ResourceSupport {
 
     @JsonUnwrapped
-    private final Book person;
+    private final Book book;
 
-    public BookResultResource(Book person) {
-        String id = person.getId();
-        this.person = person;
+    public BookResultQuery(Book book) {
+        String id = book.getId();
+        this.book = book;
         add(ControllerLinkBuilder.linkTo(methodOn(BooksController.class).get(id)).withSelfRel());
     }
 

@@ -1,6 +1,7 @@
 package poc.sb.codefirst.oas30.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,10 +11,20 @@ public class Book {
 
     @JsonIgnore
     private String id;
+
+    @ApiModelProperty(value = "Book's title", example = "A Game of Thrones")
     private String title;
+
+    @ApiModelProperty(example = "George R. R. Martin")
     private String author;
+
+    @ApiModelProperty(example = "A Song of Ice and Fire")
     private String series;
+
+    @ApiModelProperty(example = "1996")
     private Integer publicationDate;
+
+    @ApiModelProperty(example = "Epic fantasy")
     private final List<String> genre = new ArrayList<>();
 
     public String getId() {

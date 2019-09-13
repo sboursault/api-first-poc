@@ -6,8 +6,8 @@ import org.springframework.hateoas.Resources;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import poc.sb.codefirst.oas30.model.Book;
-import poc.sb.codefirst.oas30.resource.BookResource;
+import poc.sb.codefirst.oas30.resource.CreateBookCommand;
+import poc.sb.codefirst.oas30.resource.BookQuery;
 import poc.sb.codefirst.oas30.service.BookService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -33,9 +33,9 @@ public class BooksController {
             notes = "some notes",
             responseContainer = "response container", responseReference = "response ref"/*, extensions = */)
     @GetMapping
-    public Resources<BookResource> getAll() {
-        List<BookResource> books = bookService.getBooks().stream()
-                .map(BookResource::new)
+    public Resources<BookQuery> getAll() {
+        List<BookQuery> books = bookService.getBooks().stream()
+                .map(BookQuery::new)
                 .collect(toList());
         return new Resources<>(
                 books,
@@ -53,18 +53,17 @@ public class BooksController {
             )
     })*/
     @ApiResponses(@ApiResponse(code = 200, message = "Resource created", response = String.class, examples = @Example({@ExampleProperty("'Example text'")})))
-
     @GetMapping("/{id}")
-    public BookResource get(
+    public BookQuery get(
             @ApiParam(
                     value = "the book id",
                     example = "fe6c8d75-1a5d-4d6f-b973-000000000001")
             @PathVariable String id) {
-        return new BookResource(bookService.getBook(id));
+        return new BookQuery(bookService.getBook(id));
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody Book input, HttpServletResponse response) {
+    public ResponseEntity create(@RequestBody CreateBookCommand input, HttpServletResponse response) {
         String id = bookService.create(input).getId();
         return ResponseEntity.status(CREATED)
                 .header("location", linkTo(methodOn(BooksController.class).get(id)).toUri().toString())

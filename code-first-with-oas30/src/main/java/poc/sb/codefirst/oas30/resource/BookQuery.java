@@ -8,14 +8,14 @@ import poc.sb.codefirst.oas30.model.Book;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
-public class BookResource extends ResourceSupport {
+public class BookQuery extends ResourceSupport {
 
     @JsonUnwrapped
-    private final Book person;
+    private final Book book;
 
-    public BookResource(Book person) {
-        String id = person.getId();
-        this.person = person;
+    public BookQuery(Book book) {
+        String id = book.getId();
+        this.book = book;
         add(linkTo(methodOn(BooksController.class).get(id)).withSelfRel());
         add(linkTo(methodOn(BooksController.class).getAll()).withRel("start"));
     }
