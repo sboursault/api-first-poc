@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.0.3
 info:
   title: Books API
   version: '1.0'
@@ -52,32 +52,11 @@ paths:
           content:
             application/json:
               schema:
-                example:
-                  links:
-                    - rel: start
-                      href: 'http://localhost:8080/v1/books'
-                  content:
-                    - title: Foundation
-                      author: Isaac Asimov
-                      series: Foundation Series
-                      publicationDate: 1951
-                      genre:
-                        - Science fiction
-                        - political drama
-                      links:
-                        - rel: self
-                          href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000000'
-                    - title: Harry Potter and the Deathly Hallows
-                      author: J. K. Rowling
-                      series: Harry Potter
-                      publicationDate: 2009
-                      genre:
-                        - Fantasy
-                      links:
-                        - rel: self
-                          href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000002'
-
-
+                $ref: '#/components/schemas/books.Book'
+              examples:
+                objectExample:
+                  $ref: '#/components/examples/books.BookList'
+                  
 
     post:
       description: register a new book
@@ -193,7 +172,33 @@ components:
       type: object
   responses: {}
   parameters: {}
-  examples:  {}
+  examples:  
+      books.BookList:
+        summary: A sample object
+        value:
+          links:
+            - rel: start
+              href: 'http://localhost:8080/v1/books'
+          content:
+            - title: Foundation
+              author: Isaac Asimov
+              series: Foundation Series
+              publicationDate: 1951
+              genre:
+                - Science fiction
+                - political drama
+              links:
+                - rel: self
+                  href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000000'
+            - title: Harry Potter and the Deathly Hallows
+              author: J. K. Rowling
+              series: Harry Potter
+              publicationDate: 2009
+              genre:
+                - Fantasy
+              links:
+                - rel: self
+                  href: 'http://localhost:8080/v1/books/fe6c8d75-1a5d-4d6f-b973-000000000002'
   requestBodies: {}
   headers: {}
   securitySchemes: {}

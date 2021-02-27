@@ -41,6 +41,9 @@ eclipse plugin: https://www.reprezen.com/swagger-tools (payant, live swagger-ui)
 
 https://github.com/apinf/openapi-designer
 
+## Generate Beautiful and Interactive Documentation (based on open api)
+Popular open source solutions are LucyBot and ReDoc.
+
 # swagger-ui
 
 dernière release de springfox-swagger-ui de juin 2018 :(
